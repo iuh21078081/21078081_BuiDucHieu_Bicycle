@@ -14,10 +14,10 @@ const Home = ({navigation}) => {
         </Text>
       </View>
 
-      
+      {/* "https://res.cloudinary.com/dyj2mpgxi/image/upload/f_auto,q_auto/v1/KTTH/kg5xoj9mi4ki59u5wpck" */}
       <View style={styles.imageContainer}>
         <Image
-          source={{uri:"https://res.cloudinary.com/dyj2mpgxi/image/upload/f_auto,q_auto/v1/KTTH/kg5xoj9mi4ki59u5wpck"}} // You'll need to add your bike image to assets folder
+          source={{uri:"https://ibb.co/9scXyRf"}} // You'll need to add your bike image to assets folder
           style={styles.bikeImage}
           resizeMode="contain"
         />

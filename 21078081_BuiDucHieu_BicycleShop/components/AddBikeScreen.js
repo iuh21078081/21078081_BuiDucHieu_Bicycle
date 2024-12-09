@@ -18,7 +18,7 @@ const AddBikeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
-    price: '',
+    price: 0,
     type: 'Road',
     image: '../assets/bike2.png', 
   });
@@ -30,10 +30,7 @@ const AddBikeScreen = ({ navigation }) => {
     }
 
     try {
-      await dispatch(addBike({
-        ...formData,
-        price: parseFloat(formData.price)
-      })).unwrap();
+     dispatch(addBike(formData))
       Alert.alert('Success', 'Bike added successfully', [
         { text: 'OK', onPress: () => navigation.goBack() }
       ]);
@@ -43,7 +40,7 @@ const AddBikeScreen = ({ navigation }) => {
   };
 
   const images = [
-    { key: '../assets/bione-removebg-preview.png', preview: require('../assets/bikehome.png') },
+    { key: '../assets/bikehome', preview: require('../assets/bikehome.png') },
     { key: '../assets/bike2.png', preview: require('../assets/bike2.png') },
     { key: '../assets/bike3.png', preview: require('../assets/bike3.png') },
     { key: '../assets/bike4.png', preview: require('../assets/bike4.png') },

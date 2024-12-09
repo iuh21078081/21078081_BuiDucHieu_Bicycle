@@ -22,20 +22,21 @@ const Screen2 = ({ navigation }) => {
   const [selectedType, setSelectedType] = useState('All');
 
   useEffect(() => {
+    console.log(status);
     if (status === 'idle') {
       dispatch(fetchBikes());
     }
   }, [status, dispatch]);
 
   const mappingImage = {
-    "../assets/bione-removebg-preview.png": require("../assets/bikehome.png"),
+    "../assets/bikehome.png": require("../assets/bikehome.png"),
     "../assets/bike2.png": require("../assets/bike2.png"),
     "../assets/bike3.png": require("../assets/bike3.png"),
     "../assets/bike4.png": require("../assets/bike4.png"),
   };
 
   const filteredBikes = bikes.filter(bike => 
-    selectedType === 'All' ? true : bike.type === selectedType
+    selectedType === 'All' ? true : bike?.type === selectedType
   );
 
   const BikeItem = ({ item }) => (

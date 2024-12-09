@@ -1,4 +1,7 @@
 
+
+import { setBikes, addBikeSuccess, setStatus, setError } from "./sliceBike";
+
 const API_URL = 'https://6703edfdab8a8f8927323f9c.mockapi.io/api/bikes';
 
 
